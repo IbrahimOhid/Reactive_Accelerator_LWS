@@ -143,3 +143,34 @@ console.log(Object.entries(userInfo));
 const seasonalFruit = ['Mango', 'Jack Fruit', 'Apple'];
 const seasonalFruitResult = [...seasonalFruit];
 console.log(seasonalFruitResult);
+
+// Destructuring 
+
+const user = {
+    id: 20011,
+    names: 'Ibrahim',
+    age: 28,
+    work: {
+      designation: 'Web Engineer'  
+    }
+}
+
+const {names, age} = user;
+console.log(names, age);
+const {work:{designation}} = user;
+console.log(designation);
+
+// nullish coalescing
+
+const language = 'PYton';
+console.log(language ?? 'Js');
+console.log(language || 'TypesCript');
+
+// Asynchronous javascript
+
+async function getData(){
+    const res = await fetch('https://jsonplaceholder.typicode.com/users');
+    const data = await res.json();
+    console.log(data);
+ }
+ getData()
