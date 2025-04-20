@@ -85,3 +85,61 @@ console.log(fruitSlice);
 // const fruitSplice = fruits.splice(1, 2, 'potato', 'tomato', 'grape');
 // console.log(fruitSplice);
 // console.log(fruits);
+
+// concat 
+
+const conName = ['rahim', 'karim', 'ibrahim'];
+console.log(conName.concat(['abul', 'habul']));
+
+// map 
+
+const fruit = ['banana', 'apple', 'grape', 'apple'];
+
+const mapResult = fruit.map((f)=> f === 'apple');
+console.log(mapResult);
+
+// reduce 
+
+const number = [1, 2, 3, 4, 5];
+const reduceResult = number.reduce((acc, curr)=>{
+   return acc + curr;
+}, 0);
+console.log(reduceResult);
+
+// for of
+
+const textName = 'ibrahim';
+for(text of textName){
+    console.log(text);
+}
+
+// object method
+
+// for in
+
+const lang = {
+    name: 'JS',
+    age: 1995,
+    easy: 'Yes'
+}
+
+for(property in lang){
+    console.log(property);
+    console.log(lang[property]);
+}
+
+const userInfo = {
+    name: 'Habul',
+    age: 33,
+    designation: 'Web Engineer'
+}
+
+console.log(Object.keys(userInfo));
+console.log(Object.values(userInfo));
+console.log(Object.entries(userInfo));
+
+// spread operator
+
+const seasonalFruit = ['Mango', 'Jack Fruit', 'Apple'];
+const seasonalFruitResult = [...seasonalFruit];
+console.log(seasonalFruitResult);
