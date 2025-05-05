@@ -1,5 +1,5 @@
 import React from "react";
-import Curly from "./components/curly.jsx";
+import PackingList from "./components/PackingList";
 
 const App = () => {
   //   const style1 = {
@@ -18,10 +18,12 @@ const App = () => {
   //   newStyle = style2
   // }
   return (
+    
     <div>
       {/* <Test /> */}
       {/* <Person /> */}
-      <Curly />
+      {/* <Curly /> */}
+    <PackingList />
     </div>
   );
 };
