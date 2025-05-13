@@ -1,12 +1,13 @@
 
 import './App.css'
-import Counter from './component/Counter'
+import TrafficLight from './component/TrafficLight'
 
 function App() {
 
   return (
    <div>
-    <Counter />
+    {/* <Counter /> */}
+    <TrafficLight/>
    </div>
   )
 }
