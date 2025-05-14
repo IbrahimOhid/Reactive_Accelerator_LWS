@@ -1,18 +1,16 @@
-
-import './App.css'
-import Form from './component/Form'
-import MovingDot from './component/MovingDot'
-import SimpleForm from './component/SimpleForm'
+import "./App.css";
+import Canvas from "./component/Canvas";
 
 function App() {
-
   return (
     <div>
       {/* <MovingDot/> */}
       {/* <Form/> */}
-      <SimpleForm/>
+      {/* <SimpleForm/> */}
+      {/* <Scoreboard/> */}
+      <Canvas/>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
