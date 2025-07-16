@@ -1,5 +1,6 @@
 import Form from './components/Form'
 import Pointer from './components/Pointer'
+import UserInfoForm from './components/UserInfoForm'
 
 
 function App() {
@@ -8,7 +9,8 @@ function App() {
     <div>
       {/* <Form/> */}
       {/* <Pointer/> */}
-      <AnotherForm/>
+      {/* <AnotherForm/> */}
+      <UserInfoForm/>
     </div>
   )
 }
