@@ -1,7 +1,7 @@
+import Counter from './components/Counter'
 import Form from './components/Form'
 import Pointer from './components/Pointer'
 import TravelPlan from './components/TravelPlan'
-import TravelPlan1 from './components/TravelPlan1'
 import UserInfoForm from './components/UserInfoForm'
 
 
@@ -16,7 +16,7 @@ function App() {
       {/* <AnotherForm/> */}
       {/* <UserInfoForm/> */}
       {/* <TravelPlan/> */}
-      <TravelPlan1/>
+      <Counter/>
     </div>
   )
 }
