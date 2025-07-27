@@ -1,17 +1,13 @@
 import React from 'react'
+import Task from './Task'
 
-const TaskList = () => {
+const TaskList = ({tasks, onChangeTask, onDeleteTask}) => {
   return (
     <div>
       <ul>
-        <li className=''>
-            <label>
-                <input type="checkbox" name="" id="" />
-                <input />
-                <button>Save</button>
-                <button>Delete</button>
-            </label>
-        </li>
+        {
+          tasks.map(task => <Task key={task.id} task={task} onChangeTask ={onChangeTask} onDeleteTask ={onDeleteTask} />)
+        }
       </ul>
     </div>
   )

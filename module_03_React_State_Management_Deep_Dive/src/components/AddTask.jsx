@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const AddTask = () => {
+const AddTask = ({onAddTask}) => {
+  const [newText, setNewText] = useState('')
   return (
     <div>
-      <input type="text" placeholder='Add Task' />
-      <button>Add</button>
+      <input type="text" placeholder='Add Task' value={newText} onChange={(e)=>
+         setNewText(e.target.value)} />
+      <button onClick={()=> {
+        setNewText('')
+        onAddTask(newText)
+      }} >Add</button>
     </div>
   )
 }
