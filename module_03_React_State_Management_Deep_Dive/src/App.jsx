@@ -7,6 +7,7 @@ import TaskList from './components/TaskList'
 import TravelPlan from './components/TravelPlan'
 import UserInfoForm from './components/UserInfoForm'
 import Reducer from './components/reducer'
+import Book from './components/book'
 // import { useState } from 'react'
 
 // import initialTasks from './data/data'
@@ -61,7 +62,8 @@ function App() {
       <AddTask onAddTask = {handleAddTask}/>
       <TaskList tasks={tasks} onChangeTask={handleChangeTask} onDeleteTask = {handleDeleteTask}/> */}
 
-      <Reducer/>
+      {/* <Reducer/> */}
+      <Book/>
     </div>
   )
 }
