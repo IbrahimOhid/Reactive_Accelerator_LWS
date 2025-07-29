@@ -8,6 +8,7 @@ import TravelPlan from './components/TravelPlan'
 import UserInfoForm from './components/UserInfoForm'
 import Book from './components/book'
 import NewCounter from './components/NewCounter'
+import ComplexCounter from './components/ComplexCounter'
 // import { useState } from 'react'
 
 // import initialTasks from './data/data'
@@ -64,7 +65,8 @@ function App() {
 
       {/* <Reducer/> */}
       {/* <Book/> */}
-      <NewCounter/>
+      {/* <NewCounter/> */}
+      <ComplexCounter/>
     </div>
   )
 }
