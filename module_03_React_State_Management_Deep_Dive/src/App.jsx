@@ -10,10 +10,10 @@ import Book from "./components/book";
 import NewCounter from "./components/NewCounter";
 import ComplexCounter from "./components/ComplexCounter";
 import TodoApp from "./components/TodoApp";
+import Context from "./components/Context";
+import DemoContext from "./components/DemoContext";
 
 function App() {
-
-
   return (
     <div>
       {/* <Form/> */}
@@ -22,13 +22,13 @@ function App() {
       {/* <UserInfoForm/> */}
       {/* <TravelPlan/> */}
       {/* <Counter/> */}
-     <TodoApp/>
-      
-
+      {/* <TodoApp/> */}
       {/* <Reducer/> */}
       {/* <Book/> */}
       {/* <NewCounter/> */}
       {/* <ComplexCounter/> */}
+      {/* <Context/> */}
+      <DemoContext/>
     </div>
   );
 }

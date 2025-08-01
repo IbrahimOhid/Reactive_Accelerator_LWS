@@ -1,11 +1,12 @@
-import React, { useReducer } from "react";
+
 import initialTasks from "../data/data";
 import AddTask from "./AddTask";
 import TaskList from "./TaskList";
 import taskReducer from "../reducers/taskReducer";
+import { useImmerReducer } from "use-immer";
 
 const TodoApp = () => {
-  const [tasks, dispatch] = useReducer(taskReducer, initialTasks);
+  const [tasks, dispatch] = useImmerReducer(taskReducer, initialTasks);
   const getTaskId = (taskId) => {
     const maxId = taskId.reduce((prev, curr) => {
       prev && prev.id > curr.id ? prev.id : curr.id;
