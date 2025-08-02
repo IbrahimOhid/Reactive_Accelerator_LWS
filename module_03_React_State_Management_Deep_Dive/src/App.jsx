@@ -27,8 +27,8 @@ function App() {
       {/* <Book/> */}
       {/* <NewCounter/> */}
       {/* <ComplexCounter/> */}
-      {/* <Context/> */}
-      <DemoContext/>
+      <Context/>
+      {/* <DemoContext/> */}
     </div>
   );
 }
