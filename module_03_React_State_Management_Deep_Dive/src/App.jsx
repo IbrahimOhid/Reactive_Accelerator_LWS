@@ -12,6 +12,7 @@ import ComplexCounter from "./components/ComplexCounter";
 import TodoApp from "./components/TodoApp";
 import Context from "./components/Context";
 import DemoContext from "./components/DemoContext";
+import UseReducerCounter from "./components/UseReducerCounter";
 
 function App() {
   return (
@@ -27,8 +28,9 @@ function App() {
       {/* <Book/> */}
       {/* <NewCounter/> */}
       {/* <ComplexCounter/> */}
-      <Context/>
+      {/* <Context/> */}
       {/* <DemoContext/> */}
+      <UseReducerCounter/>
     </div>
   );
 }
