@@ -13,6 +13,7 @@ import TodoApp from "./components/TodoApp";
 import Context from "./components/Context";
 import DemoContext from "./components/DemoContext";
 import UseReducerCounter from "./components/UseReducerCounter";
+import ContextPractice from "./components/contextPractice";
 
 function App() {
   return (
@@ -30,7 +31,8 @@ function App() {
       {/* <ComplexCounter/> */}
       {/* <Context/> */}
       {/* <DemoContext/> */}
-      <UseReducerCounter/>
+      {/* <UseReducerCounter/> */}
+      <ContextPractice/>
     </div>
   );
 }
