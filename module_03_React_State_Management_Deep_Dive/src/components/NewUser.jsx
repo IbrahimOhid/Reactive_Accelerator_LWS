@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { UserContextHook } from "../assets/hook/UseUsersHook";
 
 const NewUser = () => {
-  const { users, setUsers } = UserContextHook();
+  const { state, dispatch } = UserContextHook();
   const [userName, setUserName] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
     const newUser = { id: new Date().getTime().toString(), name: userName };
-    setUsers([...users, newUser]);
+    dispatch({type: 'ADD_USER', payload: newUser})
     setUserName("");
   };
   return (

@@ -1,10 +1,9 @@
 import { UserContextHook } from "../assets/hook/UseUsersHook";
 
 const User = ({ user }) => {
-  const { users, setUsers } = UserContextHook();
+  const { state, dispatch } = UserContextHook();
   const handleDelete = (id) => {
-    const filteredUser = users.filter((user) => user.id !== id);
-    setUsers(filteredUser);
+    dispatch({type:'DELETE_USER', payload: id})
   };
   return (
     <div className="bg-teal-600 p-10 text-white text-lg">

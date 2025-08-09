@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React, { useReducer } from "react";
 import Users from "./Users";
 import NewUser from "./NewUser";
 import { UserContext } from "../context/UsersContext";
+import { initialValue, reducer } from "../reducers/usersReducer";
 
 const ContextPractice = () => {
-  const [users, setUsers] = useState([
-    { id: 1, name: "Mohammad" },
-    { id: 2, name: "Ibrahim" },
-  ]);
+  const [state, dispatch] = useReducer(reducer, initialValue )
+  
 
   return (
-    <UserContext.Provider value={{ users, setUsers }}>
+    <UserContext.Provider value={{ state, dispatch }}>
       <div>
         <NewUser />
         <Users />
