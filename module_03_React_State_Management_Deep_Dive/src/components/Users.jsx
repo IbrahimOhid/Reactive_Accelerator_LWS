@@ -1,11 +1,12 @@
-import React from "react";
 import User from "./User";
+import { UserContextHook } from "../assets/hook/UseUsersHook";
 
-const Users = ({ users }) => {
+const Users = ({ handleDeleteUser }) => {
+  const { users } = UserContextHook();
   return (
     <div className="flex p-12 gap-5">
       {users.map((user) => (
-        <User key={user.id} user={user} />
+        <User key={user.id} user={user} handleDeleteUser={handleDeleteUser} />
       ))}
     </div>
   );
