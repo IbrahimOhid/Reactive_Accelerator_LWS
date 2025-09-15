@@ -1,14 +1,14 @@
 import React, { useRef } from "react";
 
 const Todo = () => {
-    const inputVal = useRef();
-    const handleInputBtn = ()=>{
-        console.log(inputVal.current.value)
+    const myRef = useRef(null);
+    const handleBtn = ()=>{
+        myRef.current.textContent = 'Hello Bangladesh'
     }
   return (
     <div>
-      <input className="border" ref={inputVal} type="text" />
-      <button onClick={handleInputBtn} className="bg-gray-400 ml-3 px-2">Log Value</button>
+      <div ref={myRef}>Hello</div>
+      <button onClick={handleBtn} className="bg-gray-400 ml-3 px-2">Click Me</button>
     </div>
   );
 };
