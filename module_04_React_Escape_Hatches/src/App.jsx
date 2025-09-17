@@ -1,9 +1,9 @@
 import "./App.css";
-import CatFriends from "./component/CatFriends";
 import Counter from "./component/Counter";
 import Focus from "./component/Focus";
 import Stopwatch from "./component/Stopwatch";
 import Todo from "./component/Todo";
+import TodoList from "./component/TodoList";
 
 function App() {
   return (
@@ -11,7 +11,8 @@ function App() {
       {/* <Counter /> */}
       {/* <Stopwatch/> */}
       {/* <Todo/> */}
-       <Focus/> 
+      {/* <Focus/>  */}
+      <TodoList/>
     </>
   );
 }
