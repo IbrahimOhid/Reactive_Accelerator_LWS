@@ -1,16 +1,16 @@
-import React, { useEffect } from 'react'
-import MyComponent from './component/MyComponent'
-import './App.css'
+import MyComponent from "./component/MyComponent";
+import "./App.css";
+import ChatRoom from "./component/ChatRoom";
+import Comments from "./component/Comments";
 
 const App = () => {
-  useEffect(()=>{
-    console.log('hello')
-  })
   return (
     <div>
-      <MyComponent/>
+      {/* <MyComponent /> */}
+      {/* <ChatRoom/> */}
+      <Comments/>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
