@@ -1,15 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { fetchComment } from "../utils/fetchComments";
+import { fetchingComment } from "../utils/fetchComments";
 
-const Comments = () => {
+const Comments = ({postId}) => {
   const [comments, setComments] = useState([]);
+
   useEffect(() => {
+    let ignore = false
+    console.log('ddddddddd')
     async function startFetching() {
-      const json = await fetchComment(1);
-      setComments(json);
+      const json = await fetchingComment(postId);
+      if(!ignore){
+        console.log('ibr')
+        setComments(json);
+      }
     }
     startFetching();
-  }, []);
+    return ()=>{
+        ignore = true
+    }
+  },[postId]);
   return (
     <div>
       <ul>

@@ -8,7 +8,7 @@ const App = () => {
     <div>
       {/* <MyComponent /> */}
       {/* <ChatRoom/> */}
-      <Comments/>
+      <Comments postId="4" />
     </div>
   );
 };
