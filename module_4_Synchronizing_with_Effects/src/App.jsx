@@ -4,6 +4,8 @@ import ChatRoom from "./component/ChatRoom";
 import Comments from "./component/Comments";
 import Putting from "./component/Putting";
 import Basic from "./component/Basic";
+import Example1 from "./component/Example1";
+import Example4 from "./component/Example4";
 
 const App = () => {
   return (
@@ -12,7 +14,9 @@ const App = () => {
       {/* <ChatRoom/> */}
       {/* <Comments postId="4" /> */}
       {/* <Putting/> */}
-      <Basic/>
+      {/* <Basic/> */}
+      {/* <Example1/> */}
+      <Example4/>
     </div>
   );
 };
