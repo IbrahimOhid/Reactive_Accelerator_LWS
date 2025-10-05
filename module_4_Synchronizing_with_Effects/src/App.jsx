@@ -6,6 +6,9 @@ import Putting from "./component/Putting";
 import Basic from "./component/Basic";
 import Example1 from "./component/Example1";
 import Example4 from "./component/Example4";
+import Example5 from "./component/Example5";
+import Example7 from "./component/Example7";
+import Example8 from "./component/Example8";
 
 const App = () => {
   return (
@@ -16,7 +19,10 @@ const App = () => {
       {/* <Putting/> */}
       {/* <Basic/> */}
       {/* <Example1/> */}
-      <Example4/>
+      {/* <Example4/> */}
+      {/* <Example5/> */}
+      {/* <Example7/> */}
+      <Example8/>
     </div>
   );
 };
