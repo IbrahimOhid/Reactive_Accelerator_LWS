@@ -9,6 +9,7 @@ import Example4 from "./component/Example4";
 import Example5 from "./component/Example5";
 import Example7 from "./component/Example7";
 import Example8 from "./component/Example8";
+import Example9 from "./component/Example9";
 
 const App = () => {
   return (
@@ -22,7 +23,8 @@ const App = () => {
       {/* <Example4/> */}
       {/* <Example5/> */}
       {/* <Example7/> */}
-      <Example8/>
+      {/* <Example8/> */}
+      <Example9/>
     </div>
   );
 };
