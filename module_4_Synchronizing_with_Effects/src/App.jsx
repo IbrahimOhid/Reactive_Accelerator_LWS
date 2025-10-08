@@ -10,6 +10,8 @@ import Example5 from "./component/Example5";
 import Example7 from "./component/Example7";
 import Example8 from "./component/Example8";
 import Example9 from "./component/Example9";
+import SearchResult from "./component/SearchResult";
+import DataFetch from "./component/DataFetch";
 
 const App = () => {
   return (
@@ -24,7 +26,9 @@ const App = () => {
       {/* <Example5/> */}
       {/* <Example7/> */}
       {/* <Example8/> */}
-      <Example9/>
+      {/* <Example9/> */}
+      {/* <SearchResult/> */}
+      <DataFetch/>
     </div>
   );
 };
