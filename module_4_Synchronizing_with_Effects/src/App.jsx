@@ -12,6 +12,7 @@ import Example8 from "./component/Example8";
 import Example9 from "./component/Example9";
 import SearchResult from "./component/SearchResult";
 import DataFetch from "./component/DataFetch";
+import NewChatRoom from "./component/NewChatRoom";
 
 const App = () => {
   return (
@@ -28,7 +29,8 @@ const App = () => {
       {/* <Example8/> */}
       {/* <Example9/> */}
       {/* <SearchResult/> */}
-      <DataFetch/>
+      {/* <DataFetch/> */}
+      <NewChatRoom/>
     </div>
   );
 };
