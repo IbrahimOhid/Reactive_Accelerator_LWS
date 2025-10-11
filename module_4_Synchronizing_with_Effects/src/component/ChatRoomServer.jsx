@@ -1,14 +1,17 @@
 import React, { useEffect } from "react";
-import { createConnection } from "../utils/connection";
+import { createConnection, logVist } from "../utils/connection";
 
-const ChatRoomServer = ({ roomId }) => {
-  const serverUrl = "http://localhost:5173/";
+const ChatRoomServer = ({ roomId, serverUrl }) => {
   useEffect(() => {
     const connection = createConnection(serverUrl, roomId);
     connection.connect();
     return () => {
       connection.disconnect();
     };
+  }, [roomId, serverUrl]);
+
+  useEffect(() => {
+    logVist(roomId);
   }, [roomId]);
   return (
     <div>

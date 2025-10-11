@@ -4,11 +4,13 @@ import ChatRoomServer from "./ChatRoomServer";
 const NewChatRoom = () => {
   const [roomId, setRoomId] = useState("General");
   const [showChat, setShowChat] = useState(true);
+  const [serverUrl, setServerUrl] = useState("http://localhost:5173/")
   const handleChange = (e)=>{
     setRoomId(e.target.value)
   }
   return (
     <div className="text-center py-10">
+      
       <div>
         <button
           onClick={() => setShowChat((s) => !s)}
@@ -18,6 +20,9 @@ const NewChatRoom = () => {
         >
           {showChat ? "Hide Chat Room" : "Show Chat Room"}
         </button>
+      </div>
+      <div>
+        <input className="border" type="text" value={serverUrl} onChange={(e)=> setServerUrl(e.target.value)} />
       </div>
       {showChat && (
         <div>
@@ -29,7 +34,7 @@ const NewChatRoom = () => {
               <option value="Travel">Travel</option>
               <option value="Music">Music</option>
             </select>
-            <ChatRoomServer  roomId={roomId} />
+            <ChatRoomServer  roomId={roomId} serverUrl={serverUrl} />
           </div>
         </div>
       )}

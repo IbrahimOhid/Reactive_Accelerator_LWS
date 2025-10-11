@@ -10,3 +10,7 @@ export const createConnection = (serverUrl, roomId) => {
     },
   };
 };
+
+export const logVist = (roomId)=>{
+    console.log(`User Visited ${roomId} Room`)
+}
