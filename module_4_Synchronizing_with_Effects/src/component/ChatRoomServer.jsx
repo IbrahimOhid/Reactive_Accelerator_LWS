@@ -1,18 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { createConnection, logVist } from "../utils/connection";
+import { SettingContext } from "../contexts/Setting";
 
-const ChatRoomServer = ({ roomId, serverUrl }) => {
-  useEffect(() => {
-    const connection = createConnection(serverUrl, roomId);
-    connection.connect();
-    return () => {
-      connection.disconnect();
-    };
-  }, [roomId, serverUrl]);
+const ChatRoomServer = ({ roomId, selectedServerUrl }) => {
+  const settings = useContext(SettingContext);
+  const serverUrl =
+    selectedServerUrl ?? settings.defaultServerUrl;
+    useEffect(() => {
+      const connection = createConnection(serverUrl, roomId);
+      connection.connect();
+      return () => {
+        connection.disconnect();
+      };
+    }, [roomId, serverUrl]);
 
-  useEffect(() => {
-    logVist(roomId);
-  }, [roomId]);
+  // useEffect(() => {
+  //   logVist(roomId);
+  // }, [roomId]);
   return (
     <div>
       <h1>

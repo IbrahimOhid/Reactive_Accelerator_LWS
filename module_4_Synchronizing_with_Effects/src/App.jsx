@@ -13,8 +13,16 @@ import Example9 from "./component/Example9";
 import SearchResult from "./component/SearchResult";
 import DataFetch from "./component/DataFetch";
 import NewChatRoom from "./component/NewChatRoom";
+import Page from "./component/Page";
+import { ShoppingCartContext } from "./contexts/ShoppingCart";
 
 const App = () => {
+  const items = [
+    {
+      id: 1,
+      title: 'Hp Laptop'
+    }
+  ]
   return (
     <div>
       {/* <MyComponent /> */}
@@ -30,7 +38,10 @@ const App = () => {
       {/* <Example9/> */}
       {/* <SearchResult/> */}
       {/* <DataFetch/> */}
-      <NewChatRoom/>
+      {/* <NewChatRoom/> */}
+      <ShoppingCartContext.Provider value={items}>
+        <Page url={'/home'}/>
+      </ShoppingCartContext.Provider>
     </div>
   );
 };
