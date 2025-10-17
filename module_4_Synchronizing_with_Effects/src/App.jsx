@@ -15,6 +15,7 @@ import DataFetch from "./component/DataFetch";
 import NewChatRoom from "./component/NewChatRoom";
 import Page from "./component/Page";
 import { ShoppingCartContext } from "./contexts/ShoppingCart";
+import Pointer from "./component/Pointer";
 
 const App = () => {
   const items = [
@@ -39,9 +40,10 @@ const App = () => {
       {/* <SearchResult/> */}
       {/* <DataFetch/> */}
       {/* <NewChatRoom/> */}
-      <ShoppingCartContext.Provider value={items}>
+      {/* <ShoppingCartContext.Provider value={items}>
         <Page url={'/home'}/>
-      </ShoppingCartContext.Provider>
+      </ShoppingCartContext.Provider> */}
+      <Pointer/>
     </div>
   );
 };
