@@ -16,6 +16,7 @@ import NewChatRoom from "./component/NewChatRoom";
 import Page from "./component/Page";
 import { ShoppingCartContext } from "./contexts/ShoppingCart";
 import Pointer from "./component/Pointer";
+import Timer from "./component/Timer";
 
 const App = () => {
   const items = [
@@ -43,7 +44,8 @@ const App = () => {
       {/* <ShoppingCartContext.Provider value={items}>
         <Page url={'/home'}/>
       </ShoppingCartContext.Provider> */}
-      <Pointer/>
+      {/* <Pointer/> */}
+      <Timer/>
     </div>
   );
 };
