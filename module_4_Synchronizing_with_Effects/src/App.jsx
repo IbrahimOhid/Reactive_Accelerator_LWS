@@ -9,7 +9,6 @@ import Example4 from "./component/Example4";
 import Example5 from "./component/Example5";
 import Example7 from "./component/Example7";
 import Example8 from "./component/Example8";
-import Example9 from "./component/Example9";
 import SearchResult from "./component/SearchResult";
 import DataFetch from "./component/DataFetch";
 import NewChatRoom from "./component/NewChatRoom";
@@ -17,14 +16,16 @@ import Page from "./component/Page";
 import { ShoppingCartContext } from "./contexts/ShoppingCart";
 import Pointer from "./component/Pointer";
 import Timer from "./component/Timer";
+import StatusBar from "./component/StatusBar";
+import SaveButton from "./component/SaveButton";
 
 const App = () => {
-  const items = [
-    {
-      id: 1,
-      title: 'Hp Laptop'
-    }
-  ]
+  // const items = [
+  //   {
+  //     id: 1,
+  //     title: 'Hp Laptop'
+  //   }
+  // ]
   return (
     <div>
       {/* <MyComponent /> */}
@@ -37,7 +38,6 @@ const App = () => {
       {/* <Example5/> */}
       {/* <Example7/> */}
       {/* <Example8/> */}
-      {/* <Example9/> */}
       {/* <SearchResult/> */}
       {/* <DataFetch/> */}
       {/* <NewChatRoom/> */}
@@ -45,7 +45,9 @@ const App = () => {
         <Page url={'/home'}/>
       </ShoppingCartContext.Provider> */}
       {/* <Pointer/> */}
-      <Timer/>
+      {/* <Timer/> */}
+      <StatusBar/>
+      <SaveButton/>
     </div>
   );
 };
