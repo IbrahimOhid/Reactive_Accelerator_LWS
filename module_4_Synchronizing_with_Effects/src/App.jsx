@@ -18,6 +18,7 @@ import Pointer from "./component/Pointer";
 import Timer from "./component/Timer";
 import StatusBar from "./component/StatusBar";
 import SaveButton from "./component/SaveButton";
+import Form from "./component/Form";
 
 const App = () => {
   // const items = [
@@ -48,6 +49,7 @@ const App = () => {
       {/* <Timer/> */}
       <StatusBar/>
       <SaveButton/>
+      <Form/>
     </div>
   );
 };
