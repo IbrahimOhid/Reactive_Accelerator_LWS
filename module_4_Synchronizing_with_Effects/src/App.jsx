@@ -19,6 +19,7 @@ import Timer from "./component/Timer";
 import StatusBar from "./component/StatusBar";
 import SaveButton from "./component/SaveButton";
 import Form from "./component/Form";
+import ShowText from "./component/ShowText";
 
 const App = () => {
   // const items = [
@@ -47,9 +48,10 @@ const App = () => {
       </ShoppingCartContext.Provider> */}
       {/* <Pointer/> */}
       {/* <Timer/> */}
-      <StatusBar/>
+      {/* <StatusBar/>
       <SaveButton/>
-      <Form/>
+      <Form/> */}
+      <ShowText/>
     </div>
   );
 };
