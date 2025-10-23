@@ -20,6 +20,7 @@ import StatusBar from "./component/StatusBar";
 import SaveButton from "./component/SaveButton";
 import Form from "./component/Form";
 import ShowText from "./component/ShowText";
+import UseCallBack from "./component/UseCallBack";
 
 const App = () => {
   // const items = [
@@ -51,7 +52,8 @@ const App = () => {
       {/* <StatusBar/>
       <SaveButton/>
       <Form/> */}
-      <ShowText/>
+      {/* <ShowText/> */}
+      <UseCallBack/>
     </div>
   );
 };
