@@ -8,3 +8,7 @@ const api = axios.create({
 export const getPost = ()=>{
     return api.get('/posts')
 }
+// post method
+export const postData = (post)=>{
+    return api.post('/posts', post )
+}

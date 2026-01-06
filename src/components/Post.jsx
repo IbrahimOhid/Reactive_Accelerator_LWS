@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getPost } from "../api/PostApi";
+import Form from "./Form";
 
 const Post = () => {
   const [post, setPosts] = useState([]);
@@ -13,6 +14,9 @@ const Post = () => {
   }, []);
   return (
     <div>
+      <div>
+        <Form/>
+      </div>
       <div className="flex flex-wrap justify-center mt-10">
         {/* card 1 */}
         {post.map((post) => {
