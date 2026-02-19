@@ -1,6 +1,4 @@
-import { wrapPromise } from "../utils/WrapPromise";
-
-export const fetchPost = async (url) => {
-  const response = await fetch(url);
-  return wrapPromise(response.json())
+export const fetchPosts = async () => {
+  const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+  return response.json();
 };

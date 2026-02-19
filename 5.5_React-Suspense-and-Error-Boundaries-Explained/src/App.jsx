@@ -1,14 +1,19 @@
-import React, { Suspense } from 'react'
-import PostSelector from './component/PostSelector'
+import { Suspense } from "react";
+import Posts from "./component/Posts";
+import Loading from "./component/loading";
+import { ErrorBoundary } from "react-error-boundary";
+import Error from "./component/Error";
 
 const App = () => {
   return (
     <div>
-      <h1>React Suspense and Error Boundaries</h1>
-      <Suspense fallback={<h1>Loading...</h1>} > <PostSelector/></Suspense>
-     
+      <ErrorBoundary fallback={<Error/>}>
+        <Suspense fallback={<Loading />}>
+          <Posts />
+        </Suspense>
+      </ErrorBoundary>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
