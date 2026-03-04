@@ -10,7 +10,7 @@ import Reset from './pages/Reset';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/home',
     element: <Home/>
   },
   {
