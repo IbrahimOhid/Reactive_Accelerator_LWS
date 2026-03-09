@@ -5,10 +5,9 @@ import {
   GithubAuthProvider,
   signOut,
 } from "firebase/auth";
-import { app } from "../firebase";
+import { auth } from "../firebase";
 
 const SignInWithGithub = () => {
-  const auth = getAuth(app);
   const provider = new GithubAuthProvider();
 
   const [newUser, setNewUser] = useState(null);

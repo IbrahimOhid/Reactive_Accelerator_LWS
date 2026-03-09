@@ -1,9 +1,8 @@
 import React from "react";
-import { FacebookAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
-import { app } from "../firebase";
+import { FacebookAuthProvider, signInWithPopup } from "firebase/auth";
+import { auth } from "../firebase";
 
 const SignInWithFacebook = () => {
-  const auth = getAuth(app);
   const provider = new FacebookAuthProvider();
 
   const signInFacebookBtnClick = async () => {
