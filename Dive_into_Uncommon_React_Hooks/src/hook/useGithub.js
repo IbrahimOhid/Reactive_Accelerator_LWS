@@ -5,7 +5,8 @@ export const useGithub = (username) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  useDebugValue(`fetching Data ${username}`)
+//   useDebugValue(`fetching Data ${username}`)
+useDebugValue(error ? `Error Fetching ${username}`: `No Error ${username}`)
 
   const fetchGithubData = async()=>{
     setLoading(true)
