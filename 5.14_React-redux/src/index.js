@@ -1,15 +1,14 @@
+const { createStore } = ("@reduxjs/toolkit");
+
 const INCREMENT = "INCREMENT";
 const DECREMENT = "DECREMENT";
-const ADD_USER = 'ADD_USER'
+const ADD_USER = "ADD_USER";
 
 // state
 const initialCounter = {
   count: 0,
 };
 
-const initialUserState = {
-  user: [{ name: "Ibrahim" }],
-};
 
 // actions - object-> type, payload
 const incrementCounter = () => {
@@ -24,9 +23,33 @@ const decrementCounter = () => {
   };
 };
 
-const addUser = ()=>{
-    return{
-        type: ADD_USER,
-        payload:{name: 'ohid'}
-    }
-}
+
+
+// create reducer for Counter
+const counterReducer = (state = initialCounter, action) => {
+  switch (action.type) {
+    case INCREMENT:
+      return {
+        ...state,
+        count: state.count++,
+      };
+
+    case DECREMENT:
+      return {
+        ...state,
+        count: state.count--,
+      };
+
+    default:
+      state;
+  }
+};
+
+// create store
+const store = createStore(counterReducer);
+
+store.subscribe(()=>{
+  console.log(store.getState())
+})
+
+store.dispatch(incrementCounter())
