@@ -3,7 +3,7 @@ import Counter from "./component/Counter";
 import Counter1 from "./component/Counter1";
 import { Provider } from "react-redux";
 import Todos from "./component/Todos";
-import CounterView from "./features/CounterView";
+import CounterView from "./features/counter/CounterView";
 
 const App = () => {
   return (
