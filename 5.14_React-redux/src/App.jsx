@@ -1,8 +1,11 @@
 import React from 'react'
+import PostView from './features/post/PostView'
 
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <PostView/>
+    </div>
   )
 }
 
