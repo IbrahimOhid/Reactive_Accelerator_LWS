@@ -125,7 +125,7 @@ const Navbar = () => {
                 <Link to={"/add_book"}>Add Book </Link>
               </li>
               <li>
-                Show Book
+                <Link to={"/show_book"}>Show Book</Link>
               </li>
             </ul>
           </div>

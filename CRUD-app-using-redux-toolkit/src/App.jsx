@@ -1,14 +1,15 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "../src/pages/Home";
 import ErrorPage from "../src/pages/ErrorPage";
-import Navbar from "./layouts/Navbar";
-
+import AddBooks from "./features/books/AddBooks";
+import Root from "./routes/Root";
+import ShowBooks from "./features/books/ShowBooks";
 
 const router = createBrowserRouter([
   {
     path: "/",
     errorElement: <ErrorPage />,
-    element: <Navbar/>,
+    element: <Root />,
     children: [
       {
         path: "/",
@@ -16,8 +17,9 @@ const router = createBrowserRouter([
       },
       {
         path: "add_book",
-        
-      }
+        element: <AddBooks />,
+      },
+      { path: "show_book", element: <ShowBooks /> },
     ],
   },
 ]);
