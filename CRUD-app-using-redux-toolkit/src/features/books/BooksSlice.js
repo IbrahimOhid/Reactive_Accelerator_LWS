@@ -13,8 +13,16 @@ const initialBooks = {
   initialState: initialBooks,
   reducers: {
     showBooks: (state) => state,
+    addBooks: (state, action) => {
+      state.books.push(action.payload)
+    },
+    deleteBook:(state,action)=>{
+      const id = action.payload;
+     state.books = state.books.filter((book)=> book.id !== id);
+
+    }
   },
 });
 
-export const { showBooks } = bookReducer.actions;
+export const { showBooks, addBooks, deleteBook } = bookReducer.actions;
 export default bookReducer.reducer;
