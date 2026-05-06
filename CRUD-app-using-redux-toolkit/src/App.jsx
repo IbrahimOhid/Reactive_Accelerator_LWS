@@ -1,30 +1,29 @@
+import React from "react";
+import Root from "./layouts/Root";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "../src/pages/Home";
-import ErrorPage from "../src/pages/ErrorPage";
-import AddBooks from "./features/books/AddBooks";
-import Root from "./routes/Root";
-import ShowBooks from "./features/books/ShowBooks";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    errorElement: <ErrorPage />,
-    element: <Root />,
-    children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "add_book",
-        element: <AddBooks />,
-      },
-      { path: "show_book", element: <ShowBooks /> },
-    ],
-  },
-]);
+import AddBook from "./features/book/AddBook";
+import ShowBook from "./features/book/ShowBook";
+import ErrorPage from "./pages/ErrorPage";
 
 const App = () => {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Root />,
+      errorElement: <ErrorPage />,
+      children: [
+        {
+          path: "/",
+          element: <AddBook />,
+        },
+        {
+          path: "/show-book",
+          element: <ShowBook />,
+        },
+      ],
+    },
+  ]);
+
   return <RouterProvider router={router}></RouterProvider>;
 };
 
