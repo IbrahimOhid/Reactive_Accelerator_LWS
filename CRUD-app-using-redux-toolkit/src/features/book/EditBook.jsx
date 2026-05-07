@@ -1,21 +1,21 @@
 import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { editBook } from "./bookSlice";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { addBook } from "./bookSlice";
 
-const AddBook = () => {
-  const [id, setId] = useState("")
-  const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
+const EditBook = () => {
+  const location = useLocation();
+  const [id, setId] = useState(location.state.book.id);
+  const [title, setTitle] = useState(location.state.book.title);
+  const [author, setAuthor] = useState(location.state.book.author);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const navigate = useNavigate()
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const book = {id, title, author };
-    dispatch(addBook(book));
-    navigate("show-book");
+    dispatch(editBook({id, title, author}));
+    navigate('/show-book')
   };
-
   return (
     <div>
       <div className="max-w-xl py-6 px-8 h-80 mt-20 bg-white rounded shadow-xl mx-auto">
@@ -49,7 +49,7 @@ const AddBook = () => {
             />
           </div>
           <button className="cursor-pointer py-2 px-4 block mt-6 bg-indigo-500 text-white font-bold w-full text-center rounded">
-            Add Book
+            Update Book
           </button>
         </form>
       </div>
@@ -57,4 +57,4 @@ const AddBook = () => {
   );
 };
 
-export default AddBook;
+export default EditBook;
