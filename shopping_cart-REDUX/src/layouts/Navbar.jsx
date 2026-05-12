@@ -1,19 +1,15 @@
 import React, { useState } from "react";
 
 // react icons
-import { IoIosArrowDown } from "react-icons/io";
 import { AiOutlineFire } from "react-icons/ai";
 import { BiSupport } from "react-icons/bi";
 import { CiMenuFries } from "react-icons/ci";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { IoCartOutline } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
-  const [isMegaMenuCollapse, setIsMegaMenuCollapse] = useState(false);
-  const [megaMenuSubItemsOpen, setMegaMenuSubItemsOpen] = useState("");
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-slate-800 bg-slate-950/95 backdrop-blur-xl">

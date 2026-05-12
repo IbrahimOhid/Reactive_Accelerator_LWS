@@ -1,8 +1,17 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+import Product from '../Product/Product'
 
 const Home = () => {
+  const products = useSelector((state)=> state.products)
   return (
-    <div>Home</div>
+    <div>
+      {
+        products && products.map((product)=>{
+          <Product product={product}/>
+        })
+      }
+    </div>
   )
 }
 
