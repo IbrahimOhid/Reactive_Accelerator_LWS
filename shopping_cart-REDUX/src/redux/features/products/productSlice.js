@@ -1,39 +1,51 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = [
-    {
-        id: crypto.randomUUID(),
-        img: "https://plus.unsplash.com/premium_photo-1664392147011-2a720f214e01?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600",
-        name: "Women Bag",
-        price: 120,
-        category: 'Bag',
-    },
-     {
-        id: crypto.randomUUID(),
-        img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600",
-        name: "Smart Shoe",
-        price: 100,
-        category: 'Shoe',
-    },
-    {
-        id: crypto.randomUUID(),
-        img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600",
-        name: "Ear Phone",
-        price: 140,
-        category: 'Gadget',
-    }
-]
+  // {
+  //   id: crypto.randomUUID(),
+  //   image:
+  //     "https://assets.prebuiltui.com/images/components/card/card-lamp-image.png",
+  //   name: "Cylindrical Modern Table Lamp",
+  //   price: "$29.00",
+  //   category: "Light",
+  // },
+  // {
+  //   image:
+  //     "https://assets.prebuiltui.com/images/components/card/card-watch-image.png",
+  //   name: "Modern Smart Watch for Men/women",
+  //   price: "$48.00",
+  //   category: "Watch",
+  // },
+  // {
+  //   id: crypto.randomUUID(),
+  //   image:
+  //     "https://assets.prebuiltui.com/images/components/card/card-bag-image.png",
+  //   name: "Luxury and modern ladies bag",
+  //   price: "$24.00",
+  //   category: "Bag",
+  // },
+  // {
+  //   id: crypto.randomUUID(),
+  //   image:
+  //     "https://assets.prebuiltui.com/images/components/card/card-speaker-image.png",
+  //   name: "Modern Smart AI Speaker",
+  //   price: "$29.00",
+  //   category: "Speaker",
+  // },
+];
 
 const productSlice = createSlice({
-    name: 'product',
-    initialState,
-    reducers:{
-        addProduct : (state, action)=>{
-            state.push(action.payload)
-        }
-    }
-    
-})
+  name: "products",
+  initialState,
+  reducers: {
+    addProduct: (state, action) => {
+      state.push({
+        id: crypto.randomUUID(),
+        ...action.payload,
+      });
+    },
+  },
+});
 
-export const {addProduct} = productSlice.actions;
+export const { addProduct } = productSlice.actions;
 export default productSlice.reducer;
