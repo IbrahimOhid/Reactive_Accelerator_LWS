@@ -1,91 +1,94 @@
-import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { addProduct } from "../../redux/features/products/ProductSlice";
+import { addProduct } from "../../redux/features/products/productSlice";
 import { useNavigate } from "react-router-dom";
 
 const AddProduct = () => {
-  const [id, setId] = useState("");
-  const [name, setName] = useState("");
-  const [imgUrl, setImgUrl] = useState("");
-  const [price, setPrice] = useState("");
-  const [category, setCategory] = useState("");
-  
-  // Fix: Removed the empty string from useDispatch()
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  const handleAddProduct = (e) => {
-    e.preventDefault();
-    // Ensure all data is collected correctly
-    const product = { id, name, imgUrl, price, category };
-    dispatch(addProduct(product));
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data) => {
+    dispatch(addProduct(data));
     navigate("/product");
   };
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-slate-50 p-6">
-      <form 
-        onSubmit={handleAddProduct} 
+      <form
+        onSubmit={handleSubmit(onSubmit)}
         className="w-full max-w-[400px] rounded-2xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/50 transition-all"
       >
         <div className="mb-8 text-center">
           <h2 className="text-2xl font-bold text-slate-900">Add New Product</h2>
-          <p className="text-sm text-slate-500">Fill in the details to list a new item.</p>
+          <p className="text-sm text-slate-500">
+            Fill in the details to list a new item.
+          </p>
         </div>
 
         <div className="space-y-4">
-
           {/* Product Name */}
           <div>
-            <label className="text-xs font-bold uppercase tracking-wider text-slate-500" htmlFor="name">Product Name</label>
+            <label
+              className="text-xs font-bold uppercase tracking-wider text-slate-500"
+              htmlFor="name"
+            >
+              Product Name
+            </label>
             <input
               id="name"
               className="mt-1.5 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10"
               type="text"
               placeholder="e.g. Premium Wireless Headphones"
-              required
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              {...register("name", { required: true })}
             />
           </div>
 
-          {/* Image URL - VISIBILITY IMPROVED */}
+          
+
+          {/* product image url */}
           <div>
-            <label className="text-xs font-bold uppercase tracking-wider text-slate-500" htmlFor="img">Product Image URL</label>
+            <label className="text-sm font-medium block text-gray-600">
+              Image URL:
+            </label>
             <input
-              id="img"
-              className="mt-1.5 w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10"
               type="text"
-              placeholder="https://images.com/product.jpg"
-              required
-              value={imgUrl}
-              onChange={(e) => setImgUrl(e.target.value)}
+              name="image"
+              {...register("image", { required: true })}
+              id="image"
+              placeholder="https://"
+              className="w-full bg-gray-50 text-black mt-1 p-2 rounded-lg border focus:outline focus:ring-1 focus:ring-indigo-500"
             />
           </div>
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider text-slate-500" htmlFor="price">Price</label>
+              <label
+                className="text-xs font-bold uppercase tracking-wider text-slate-500"
+                htmlFor="price"
+              >
+                Price
+              </label>
               <input
                 id="price"
                 className="mt-1.5 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none focus:border-sky-500"
                 type="number"
                 placeholder="0.00"
-                required
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
+                {...register("price", { required: true })}
               />
             </div>
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider text-slate-500" htmlFor="category">Category</label>
+              <label
+                className="text-xs font-bold uppercase tracking-wider text-slate-500"
+                htmlFor="category"
+              >
+                Category
+              </label>
               <input
                 id="category"
                 className="mt-1.5 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none focus:border-sky-500"
                 type="text"
                 placeholder="Electronics"
-                required
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}
+                {...register("category", { required: true })}
               />
             </div>
           </div>
