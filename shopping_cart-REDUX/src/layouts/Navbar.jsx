@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   const carts = useSelector((state) => state.carts);
-  console.log(carts);
+
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-slate-100 bg-white backdrop-blur-xl">

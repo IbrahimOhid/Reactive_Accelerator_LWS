@@ -6,14 +6,15 @@ const initialState = [
     image:
       "https://assets.prebuiltui.com/images/components/card/card-lamp-image.png",
     name: "Cylindrical Modern Table Lamp",
-    price: "$29.00",
+    price: 29.00,
     category: "Light",
   },
   {
+    id: crypto.randomUUID(),
     image:
       "https://assets.prebuiltui.com/images/components/card/card-watch-image.png",
     name: "Modern Smart Watch for Men/women",
-    price: "$48.00",
+    price: 48.00,
     category: "Watch",
   },
   {
@@ -21,7 +22,7 @@ const initialState = [
     image:
       "https://assets.prebuiltui.com/images/components/card/card-bag-image.png",
     name: "Luxury and modern ladies bag",
-    price: "$24.00",
+    price: 24.00,
     category: "Bag",
   },
   {
@@ -29,7 +30,7 @@ const initialState = [
     image:
       "https://assets.prebuiltui.com/images/components/card/card-speaker-image.png",
     name: "Modern Smart AI Speaker",
-    price: "$29.00",
+    price: 29.00,
     category: "Speaker",
   },
 ];

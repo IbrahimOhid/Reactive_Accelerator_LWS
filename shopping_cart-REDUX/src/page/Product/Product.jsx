@@ -32,7 +32,7 @@ const Product = ({ product }) => {
           {/* Price */}
           <div className="flex items-center justify-between gap-2 px-2">
             <span className="text-sm font-semibold text-neutral-800">
-              {price}
+             $ {price}
             </span>
             <span className="text-xs  text-blue-400 underline">{category}</span>
           </div>
