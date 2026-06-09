@@ -12,7 +12,7 @@ const LoginForm = () => {
     } = useForm();
 
     const onSubmit = (data) => {
-        navigate("/")
+        navigate("/home")
     };
 
     return (
