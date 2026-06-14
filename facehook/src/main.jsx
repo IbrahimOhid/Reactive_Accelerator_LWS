@@ -9,22 +9,29 @@ import LoginPage from "./page/LoginPage/LoginPage";
 import Home from "./page/Home/Home";
 import Root from "./layout/Root";
 import AuthProvider from "./providers/AuthProvider";
+import PrivateRouters from "./router/PrivateRouters";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <LoginPage />,
-  },
-  {
-    path: "/home",
-    element: <Root />,
+    element: <PrivateRouters />,
     children: [
       {
-        index: true,
+        path: "/",
+        element: <Root />,
+        children:[
+           {
+        path: "home",
         element: <Home />,
+      }
+        ]
       },
-    ],
+     
+    ]
   },
+  {
+    path: "login",
+    element: <LoginPage />,
+  }
 ]);
 
 createRoot(document.getElementById("root")).render(
