@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { IoMdHome } from "react-icons/io";
 import { IoIosNotifications } from "react-icons/io";
-import { CgLogOut } from "react-icons/cg";
+import  LogOutButton  from "../component/Button/LogOutButton";
 
 
 
@@ -17,7 +17,7 @@ const Navbar = () => {
         {/* LEFT: LOGO & SEARCH */}
         <div className="flex items-center gap-6">
           <Link
-            to="/"
+            to="/home"
             className="text-xl sm:text-2xl font-black tracking-tight"
           >
             Face<span className="text-sky-600">Hook</span>
@@ -29,7 +29,7 @@ const Navbar = () => {
 
           {/* Home Icon */}
           <NavLink
-            to="/"
+            to="/home"
             className={({ isActive }) =>
               `${navItem} ${isActive
                 ? "bg-sky-50 text-sky-600"
@@ -59,17 +59,7 @@ const Navbar = () => {
             <span className="absolute right-2 top-2 h-2.5 w-2.5 rounded-full bg-red-500" />
           </NavLink>
 
-          <NavLink
-            to="/login"
-            className={({ isActive }) =>
-              `${navItem} ${isActive
-                ? "bg-red-50 text-red-600"
-                : "text-slate-500 hover:bg-red-50 hover:text-red-600"
-              }`
-            }
-          >
-            <CgLogOut className="h-5 w-5" />
-          </NavLink>
+          <LogOutButton/>
 
 
           {/* Avatar container */}

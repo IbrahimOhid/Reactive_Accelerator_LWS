@@ -10,6 +10,7 @@ import Home from "./page/Home/Home";
 import Root from "./layout/Root";
 import AuthProvider from "./providers/AuthProvider";
 import PrivateRouters from "./router/PrivateRouters";
+import NotFound from "./page/NotFound/NotFound";
 
 const router = createBrowserRouter([
   {
@@ -18,19 +19,24 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Root />,
-        children:[
-           {
-        path: "home",
-        element: <Home />,
-      }
+        children: [
+          {
+            path: "/",
+            element: <Home />,
+          },
+
         ]
       },
-     
+
     ]
   },
   {
     path: "login",
     element: <LoginPage />,
+  },
+  {
+    path: "*",
+    element: <NotFound />
   }
 ]);
 

@@ -3,20 +3,33 @@ import { useForm } from "react-hook-form";
 import Field from "./Field";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import axios from "axios";
 
 const LoginForm = () => {
     const navigate = useNavigate();
-    const {setAuth} = useAuth();
+    const { setAuth } = useAuth();
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm();
 
-    const onSubmit = (data) => {
-        const user = {...data}
-        setAuth({user})
-        navigate("/home")
+    const onSubmit = async (data) => {
+        try {
+            const response = await axios.post(`${import.meta.env.VITE_SERVER_BASE_URL}/auth/login`, data)
+            if (response.status === 200) {
+                const { token, user } = response.data;
+                if (token) {
+                    const authToken = token.token;
+                    const refreshToken = token.refreshToken
+                    setAuth({ user, authToken, refreshToken })
+                    navigate("/")
+                }
+            }
+
+        } catch (error) {
+            console.log(error)
+        }
     };
 
     return (
