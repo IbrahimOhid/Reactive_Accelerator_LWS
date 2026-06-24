@@ -7,6 +7,7 @@ import LoginPage from "./page/Login/LoginPage";
 import RegistrationPage from "./page/Registration/RegistrationPage";
 import Home from "./page/Home/Home";
 import Root from "./layout/Root";
+import AuthProvider from "./providers/AuthProvider";
 
 const router = createBrowserRouter([
   {
@@ -34,5 +35,7 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />,
+  <AuthProvider>
+    <RouterProvider router={router} />
+  </AuthProvider>,
 );

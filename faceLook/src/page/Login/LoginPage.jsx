@@ -1,7 +1,9 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
 
 const LoginPage = () => {
+  const {setAuth} = useAuth();
   const {
     register,
     handleSubmit,
@@ -15,7 +17,7 @@ const LoginPage = () => {
   }
 
   const onSubmit = (data) => {
-    console.log(data);
+    setAuth(data)
     navigate("/home")
   };
 

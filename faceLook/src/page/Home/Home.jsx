@@ -1,10 +1,13 @@
 import { MdNotificationsActive } from "react-icons/md";
 import { IoSettings } from "react-icons/io5";
 import { IoMdHome } from "react-icons/io";
+import { useAuth } from "../../hooks/useAuth";
 
 
 
 const Home = () => {
+  const {auth} = useAuth();
+  console.log(auth)
   return (
     <div>
       <nav className="bg-white shadow-lg sticky top-0 z-50">
