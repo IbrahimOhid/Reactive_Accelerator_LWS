@@ -12,12 +12,16 @@ const LoginPage = () => {
 
   const navigate = useNavigate();
   const handleRegistration = ()=>{
-    console.log("ci")
     navigate("/registration");
   }
 
   const onSubmit = (data) => {
-    setAuth(data)
+    setAuth({
+      user: {
+        email: data.email,
+        password: data.password
+      }
+    });
     navigate("/home")
   };
 
